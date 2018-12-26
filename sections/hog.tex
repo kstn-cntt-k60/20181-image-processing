@@ -75,15 +75,19 @@ Ví dụ: \\
 Nếu ta có một hình ảnh 128 x 128 với  \\
 pixel\_per\_cell = 4 x 4 thì sẽ có 32 x 32 = 1024 cell,  \\
 pixel\_per\_cell = 32 x 32, sẽ có 4 x 4 = 16 cell. 
-\\[3mm]
-Với mỗi ô (cell), ta chia không gian góc thành 
+\begin{figure}[H]
+\centering
+\includegraphics[width=10cm]{figures/cell-block.png}
+\end{figure}
+\noindent Với mỗi ô (cell), ta chia không gian góc thành 
 các bin (thường là 9 ứng với mỗi bin là góc 20 độ).
 \\[3mm]
 Mỗi pixel trong ô (cell) được vote vào biểu đồ, 
 trọng số của mỗi vote chính là cường độ gradient tại pixel đó.
 \begin{figure}[H]
 \centering
-\includegraphics[width=6cm]{figures/bins.png}
+\includegraphics[width=7cm]{figures/bins-degree.png}
+\includegraphics[width=7cm]{figures/bins.png}
 \end{figure}
 
 \subsubsection{Tính toán vector đặc trưng cho mỗi block}
@@ -101,9 +105,12 @@ Ví dụ một block có kích thước 16x16 pixel: \\
 Ghép vector đặc trưng của từng block lại với nhau 
 và chuẩn hóa sẽ cho ta vector đặc trưng của ảnh. 
 \\[3mm]
-VD:  \\
-Ảnh $64 \times 128$, cell $8 \times 8$, 
+VD: Ảnh $64 \times 128$, cell $8 \times 8$, 
 block $16 \times 16$, stride $8 \times 8$ thì vector đặc trưng của toàn ảnh có 
 $7 \times 15 \times 36=3780$ chiều. 
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{figures/feature-vector.png}
+\end{figure}
 
 \end{document}
